@@ -124,10 +124,7 @@ void Delete_Recur(KEY_TYPE key, treap* &root)
 	}
 }
 
-/* 
-   Non-recursive implementation of Delete() 
- 
- */
+/* Non-recursive implementation of Delete() */
 void Delete_Non_Recur(KEY_TYPE key, treap* &Root)
 {
 	treap* parent = NULL;
