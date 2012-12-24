@@ -58,6 +58,7 @@ treap* New_Node(KEY_TYPE key)
 		exit(1);
 	}
 	p_node->key = key;
+	/* Note: the range of priority is very important, actually */
 	p_node->priority = Randint(0, 100);
 	p_node->lchild = p_node->rchild = NULL;
 	return p_node;
@@ -79,7 +80,7 @@ treap* Insert(KEY_TYPE key, treap* root)
 	else
 	{
 		root->rchild = Insert(key, root->rchild);
-		if(root->rchild->priority <= root->priority)
+		if(root->rchild->priority < root->priority)
 			root = LL_Rotate(root);
 	}
 	return root;
